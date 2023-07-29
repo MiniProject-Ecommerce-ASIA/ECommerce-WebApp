@@ -4,6 +4,7 @@ import { AiOutlineShopping } from 'react-icons/ai';
 import { Cart } from './'
 import { useStateContext } from '../context/StateContext';
 import { FaSearch } from 'react-icons/fa'
+import { CgProfile } from "react-icons/cg"
 
 const Navbar = () => {
     const { showCart, setShowCart, totalQuantities } = useStateContext();
@@ -25,11 +26,13 @@ const Navbar = () => {
                 <i className="fa fa-search"> < FaSearch /> </i>
             </button>
             <button type='button' className='cart-icon' onClick={() => setShowCart(true)}>
+                {/* <CgProfile /> */}
+            </button>
+            <button type='button' className='cart-icon' onClick={() => setShowCart(true)}>
                 <AiOutlineShopping />
                 <span className='cart-item-qty'>{totalQuantities}</span>
-                
             </button>
-            
+
 
             {showCart && <Cart />}
         </div >
